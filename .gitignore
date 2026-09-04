@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+data/*.pkl
+data/*.npz
+data/*.pt
+data/*.safetensors
+data/val2017/
+*.log
