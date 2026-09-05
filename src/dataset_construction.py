@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import importlib
+from pycocotools.coco import COCO
 from dataclasses import dataclass
 from itertools import combinations
 from pathlib import Path
@@ -20,12 +21,12 @@ QUESTION_TEMPLATE = "Is there a {object} in this image? Answer yes or no."
 
 @dataclass
 class COCOSubset:
-    """Small, explicit wrapper around the COCO API used by this assignment."""
-
-    coco: Any
-    image_dir: Path
-    category_names: dict[int, str]
-
+    
+    def __init__(self, coco: Any, image_dir: Path, category_names: dict[int, str]) -> None:
+        self.coco = coco
+        self.image_dir = image_dir
+        self.category_names = category_names
+        
     def categories_for_image(self, image_id: int) -> set[str]:
         annotation_ids = self.coco.getAnnIds(imgIds=[image_id], iscrowd=None)
         annotations = self.coco.loadAnns(annotation_ids)
@@ -38,10 +39,6 @@ class COCOSubset:
 
 def load_coco_subset(annotation_path: str, image_dir: str) -> COCOSubset:
     """Wrap pycocotools access to the provided COCO subset."""
-    try:
-        COCO = importlib.import_module("pycocotools.coco").COCO
-    except ImportError as exc:
-        raise ImportError("Install pycocotools before loading COCO annotations") from exc
     coco = COCO(annotation_path)
     categories = coco.loadCats(coco.getCatIds())
     category_names = {category["id"]: category["name"] for category in categories}
