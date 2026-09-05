@@ -22,3 +22,7 @@ def test_dataset_is_balanced_and_deterministic():
     assert [row["question_type"] for row in questions].count("present") == 2
     assert len({(row["image_id"], row["category"]) for row in questions}) == 6
     assert all(not row["ground_truth"] for row in questions if row["question_type"] != "present")
+    print("All checks passed")
+
+if __name__ == "__main__":
+    test_dataset_is_balanced_and_deterministic()
