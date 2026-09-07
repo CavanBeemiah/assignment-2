@@ -1,0 +1,11 @@
+{
+  "total": 600,
+  "unclear_count": 176,
+  "unclear_rate": 0.29333333333333333,
+  "accuracy": 0.9080188679245284,
+  "accuracy_by_question_type": {
+    "absent_adversarial": 0.9203539823008849,
+    "absent_random": 0.9882352941176471,
+    "present": 0.8014184397163121
+  }
+}
