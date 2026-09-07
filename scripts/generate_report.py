@@ -1,4 +1,3 @@
-"""Generate an answer-ready Q1-Q10 draft from saved checkpoint artifacts."""
 
 from __future__ import annotations
 

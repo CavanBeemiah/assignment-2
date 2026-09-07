@@ -153,7 +153,7 @@ def run_inference_on_manifest(model: Any, processor: Any, manifest: list[dict], 
                 result.ground_truth = bool(row["ground_truth"])
             if checkpoint_handle:
                 pickle.dump({"image_id": image_id, "results": image_results}, checkpoint_handle, protocol=pickle.HIGHEST_PROTOCOL)
-                checkpoint_handle.flush()
+                checkpoint_handle.flush() 
                 print(f"checkpoint: {image_position}/{len(image_rows)} images", flush=True)
     finally:
         if checkpoint_handle:
