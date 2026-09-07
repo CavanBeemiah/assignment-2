@@ -17,9 +17,9 @@ def pool_layer(hidden_states: np.ndarray, strategy: str) -> np.ndarray:
         return hidden_states.mean(axis=0)
     if strategy == "last":
         return hidden_states[-1]
-    if strategy == "mean_max":
-        return np.concatenate((hidden_states.mean(axis=0), hidden_states.max(axis=0)))
-    raise ValueError("strategy must be 'mean', 'last', or 'mean_max'")
+    if strategy == "max":
+        return hidden_states.max(axis=0)
+    raise ValueError("strategy must be 'mean', 'last', or 'max'")
 
 
 def build_feature_matrix(results: list[Any], layer: int, strategy: str) -> tuple[np.ndarray, np.ndarray]:
