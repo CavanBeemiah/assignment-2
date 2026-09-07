@@ -20,3 +20,7 @@ if __name__ == "__main__":
     questions = build_question_set(coco, image_ids, compute_cooccurrence(coco), args.seed)
     save_manifest(questions, args.output)
     print(f"wrote {len(questions)} questions to {args.output}")
+    counts = compute_cooccurrence(coco)
+    for (category1, category2), count in counts.items():
+        if category1 == "person":
+            print(f"{category1}, {category2}: {count}")

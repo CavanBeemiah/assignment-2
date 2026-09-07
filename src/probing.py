@@ -8,9 +8,11 @@ import numpy as np
 
 
 def pool_layer(hidden_states: np.ndarray, strategy: str) -> np.ndarray:
-    """Pool (sequence, hidden) states while retaining a named experiment choice."""
+    """Return a fixed-length feature from raw or already-pooled hidden states."""
+    if hidden_states.ndim == 1:
+        return hidden_states
     if hidden_states.ndim != 2:
-        raise ValueError("hidden_states must have shape (seq_len, hidden_dim)")
+        raise ValueError("hidden_states must have shape (hidden_dim,) or (seq_len, hidden_dim)")
     if strategy == "mean":
         return hidden_states.mean(axis=0)
     if strategy == "last":

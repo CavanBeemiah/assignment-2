@@ -1,0 +1,31 @@
+image_id,category,question,question_type,ground_truth
+352584,toilet,Is there a toilet in this image? Answer yes or no.,present,True
+352584,sandwich,Is there a sandwich in this image? Answer yes or no.,absent_random,False
+352584,sink,Is there a sink in this image? Answer yes or no.,absent_adversarial,False
+396863,person,Is there a person in this image? Answer yes or no.,present,True
+396863,baseball glove,Is there a baseball glove in this image? Answer yes or no.,absent_random,False
+396863,chair,Is there a chair in this image? Answer yes or no.,absent_adversarial,False
+39405,sports ball,Is there a sports ball in this image? Answer yes or no.,present,True
+39405,oven,Is there a oven in this image? Answer yes or no.,absent_random,False
+39405,car,Is there a car in this image? Answer yes or no.,absent_adversarial,False
+527695,dining table,Is there a dining table in this image? Answer yes or no.,present,True
+527695,cake,Is there a cake in this image? Answer yes or no.,absent_random,False
+527695,person,Is there a person in this image? Answer yes or no.,absent_adversarial,False
+293245,motorcycle,Is there a motorcycle in this image? Answer yes or no.,present,True
+293245,sink,Is there a sink in this image? Answer yes or no.,absent_random,False
+293245,person,Is there a person in this image? Answer yes or no.,absent_adversarial,False
+456559,tie,Is there a tie in this image? Answer yes or no.,present,True
+456559,sports ball,Is there a sports ball in this image? Answer yes or no.,absent_random,False
+456559,chair,Is there a chair in this image? Answer yes or no.,absent_adversarial,False
+408696,toilet,Is there a toilet in this image? Answer yes or no.,present,True
+408696,fire hydrant,Is there a fire hydrant in this image? Answer yes or no.,absent_random,False
+408696,chair,Is there a chair in this image? Answer yes or no.,absent_adversarial,False
+339823,umbrella,Is there a umbrella in this image? Answer yes or no.,present,True
+339823,knife,Is there a knife in this image? Answer yes or no.,absent_random,False
+339823,chair,Is there a chair in this image? Answer yes or no.,absent_adversarial,False
+120777,cup,Is there a cup in this image? Answer yes or no.,present,True
+120777,traffic light,Is there a traffic light in this image? Answer yes or no.,absent_random,False
+120777,person,Is there a person in this image? Answer yes or no.,absent_adversarial,False
+286553,person,Is there a person in this image? Answer yes or no.,present,True
+286553,couch,Is there a couch in this image? Answer yes or no.,absent_random,False
+286553,car,Is there a car in this image? Answer yes or no.,absent_adversarial,False

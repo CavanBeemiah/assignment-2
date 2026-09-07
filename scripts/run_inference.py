@@ -14,8 +14,11 @@ if __name__ == "__main__":
     parser.add_argument("--model", default="HuggingFaceTB/SmolVLM-256M-Instruct")
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--output", default="data/inference_results.pkl")
+    parser.add_argument("--pooling", default="mean", choices=("mean", "last", "mean_max", "raw"))
     args = parser.parse_args()
     model, processor = load_model(args.model, args.device)
-    results = run_inference_on_manifest(model, processor, load_manifest(args.manifest), args.images)
+    checkpoint = args.output.replace(".pkl", "_checkpoint.pkl")
+    results = run_inference_on_manifest(model, processor, load_manifest(args.manifest), args.images,
+                                        checkpoint, args.pooling)
     save_results(results, args.output)
     print(f"wrote {len(results)} results to {args.output}")
