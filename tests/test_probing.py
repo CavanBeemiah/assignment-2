@@ -17,3 +17,7 @@ def test_split_is_stratified_and_feature_labels_are_correct():
     X, y = build_feature_matrix(results, 0, "mean")
     assert X.shape == (12, 3)
     assert np.all(y == 1)
+    print("Tests passed")
+
+if __name__ == "__main__":
+    test_split_is_stratified_and_feature_labels_are_correct()

@@ -11,3 +11,7 @@ def test_pooling_shapes_and_values():
     assert np.array_equal(pool_layer(states, "mean"), [4, 5, 6, 7])
     assert pool_layer(states, "last").shape == (4,)
     assert pool_layer(states, "mean_max").shape == (8,)
+    print("Tests passed")
+
+if __name__ == "__main__":
+    test_pooling_shapes_and_values()
